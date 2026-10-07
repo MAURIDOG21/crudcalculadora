@@ -3,15 +3,15 @@
 Respóndeme en el chat (con tus palabras, aunque no sean perfectas) y te corrijo.
 
 ## A. Conceptos generales
-1. ¿Qué significan las siglas CRUD? Da un ejemplo de cada letra en la app de tareas.
-2. ¿Por qué separamos `tareas.js` de `interfaz.js`? ¿Qué ventaja tiene?
-3. ¿Qué hace `export` y qué hace `import`? ¿Por qué `index.html` usa `type="module"`?
-4. ¿Para qué sirve `localStorage` y qué pasa con los datos si cierras el navegador? ¿Y si lo abres en otro navegador?
+1. ¿Qué significan las siglas CRUD? Da un ejemplo de cada letra en la app de tareas. son las acciones que realiza cada apartado ejemplo calculadora tiene como crud limpiar  es un ejemplo de como se puede aplicar el crud 
+2. ¿Por qué separamos `tareas.js` de `interfaz.js`? ¿Qué ventaja tiene? uno funciona en base la logica y lo otro es la parte digamos visual de igual froma su funcionamiento pero funcionamiento visual y el de tareas .js es la logica interna en ejecucion por el usuario tood es proceso 
+3. ¿Qué hace `export` y qué hace `import`? ¿Por qué `index.html` usa `type="module"`? en este caso estamos exportanto las fucniones de otors apartados es como estar llamando como estamos exportanto archivos de otros archivo osea hablando del codigo el import cre que en este caso se refiere a importar funciones especificas que realizan acciones en el codigo especificasb como el usnshift que corre en areglo un apocicon asi la derecha type modulo el tipop y llamado de mopsulo que ese esta mostrando ejecuitando o programando o simplemente el ipo de archivo 
+4. ¿Para qué sirve `localStorage` y qué pasa con los datos si cierras el navegador? ¿Y si lo abres en otro navegador? el local es para guardar el sistema en lo local y poder ejecutarlo 
 5. ¿Por qué `localStorage` solo guarda texto y qué hacen `JSON.stringify` y `JSON.parse`?
 
 ## B. Código
-6. En `eliminarTarea`, ¿por qué se usa `filter` y no `splice`? ¿Qué devuelve `filter`?
-7. En `alternarTarea`, ¿qué hace `{ ...t, hecha: !t.hecha }`?
+6. En `eliminarTarea`, ¿por qué se usa `filter` y no `splice`? ¿Qué devuelve `filter`? porque aqui estamso trabajando con identificadores no por pociones al momento de filter al momento de que ve id con eso trabja el filter 
+7. En `alternarTarea`, ¿qué hace `{ ...t, hecha: !t.hecha }`? 
 8. ¿Para qué sirve `evento.preventDefault()` en un formulario?
 9. ¿Qué es la "delegación de eventos"? ¿Por qué en `tareas/interfaz.js` hay un solo listener en el `<ul>` y no uno por botón?
 10. En `calculadora.js`, ¿qué ventaja tiene el objeto `operaciones` frente a un `switch`?
