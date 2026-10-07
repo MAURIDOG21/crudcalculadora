@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto CRUD</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Proyecto CRUD</h1>
+    <nav id="menu">
+      <button data-seccion="calculadora" class="activo">Calculadora</button>
+      <button data-seccion="tareas">Tareas</button>
+      <button data-seccion="contactos">Contactos</button>
+      <button data-seccion="gastos">Gastos</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="calculadora"></section>
+    <section id="tareas" hidden></section>
+    <section id="contactos" hidden></section>
+    <section id="gastos" hidden></section>
+  </main>
+
+  <!-- type="module" permite usar import/export entre archivos -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
