@@ -1,4 +1,4 @@
-import { obtenerTareas, crearTarea, alternarTarea, editarTarea, eliminarTarea } from './tareas.js';
+import { obtenerTareas, crearTarea, alternarTarea, editarTarea, eliminarTarea, vaciarTareas } from './tareas.js';
 import { escapar } from '../compartido/utilidades.js';
 
 export function iniciarTareas(raiz) {
@@ -6,7 +6,8 @@ export function iniciarTareas(raiz) {
     <h2>Lista de tareas</h2>
     <form>
       <input name="titulo" placeholder="Nueva tarea" required>
-      <button>Agregar</button>
+      <button>Subir</button>
+      <button type="button" id="vaciar">Vaciar</button>
     </form>
     <p class="error"></p>
     <ul></ul>`;
@@ -38,6 +39,15 @@ export function iniciarTareas(raiz) {
       pintar();
     } catch (e) {
       error.textContent = e.message;
+    }
+  });
+
+  raiz.querySelector('#vaciar').addEventListener('click', () => {
+    if (obtenerTareas().length === 0) return;
+    if (confirm('¿Eliminar todas las tareas?')) {
+      vaciarTareas();
+      error.textContent = '';
+      pintar();
     }
   });
 

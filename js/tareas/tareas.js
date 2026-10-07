@@ -30,3 +30,7 @@ export function editarTarea(id, nuevoTitulo) {    // UPDATE (título)
 export function eliminarTarea(id) {               // DELETE
   guardar(CLAVE, obtenerTareas().filter((t) => t.id !== id));
 }
+
+export function vaciarTareas() {                  // DELETE (todas)
+  guardar(CLAVE, []);
+}
