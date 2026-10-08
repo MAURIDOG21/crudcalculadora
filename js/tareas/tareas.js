@@ -4,13 +4,19 @@ import { generarId } from '../compartido/utilidades.js';
 
 const CLAVE = 'tareas.lista';
 
+// Regla única de validación: devuelve el título limpio o lanza un Error.
+function validarTitulo(titulo) {
+  const texto = titulo.trim(); // quita espacios al inicio y al final
+  if (!texto) throw new Error('El título no puede estar vacío');
+  return texto;
+}
+
 export function obtenerTareas() {                 // READ
   return cargar(CLAVE);
 }
 
 export function crearTarea(titulo) {              // CREATE
-  const texto = titulo.trim();
-  if (!texto) throw new Error('El título es obligatorio');
+  const texto = validarTitulo(titulo);
   const tareas = obtenerTareas();
   tareas.push({ id: generarId(), titulo: texto, hecha: false });
   guardar(CLAVE, tareas);
@@ -22,8 +28,7 @@ export function alternarTarea(id) {               // UPDATE (hecha / pendiente)
 }
 
 export function editarTarea(id, nuevoTitulo) {    // UPDATE (título)
-  const texto = nuevoTitulo.trim();
-  if (!texto) throw new Error('El título es obligatorio');
+  const texto = validarTitulo(nuevoTitulo);
   guardar(CLAVE, obtenerTareas().map((t) => (t.id === id ? { ...t, titulo: texto } : t)));
 }
 
