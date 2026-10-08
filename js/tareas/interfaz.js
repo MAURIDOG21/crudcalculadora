@@ -4,7 +4,7 @@ import { escapar } from '../compartido/utilidades.js';
 export function iniciarTareas(raiz) {
   raiz.innerHTML = `
     <h2>Lista de tareas</h2>
-    <form>
+    <form novalidate>
       <input name="titulo" placeholder="Nueva tarea" required>
       <button>Subir</button>
       <button type="button" id="vaciar">Vaciar</button>
@@ -61,7 +61,12 @@ export function iniciarTareas(raiz) {
       const actual = obtenerTareas().find((t) => t.id === id);
       const nuevo = prompt('Editar tarea:', actual.titulo);
       if (nuevo !== null) {
-        try { editarTarea(id, nuevo); } catch (e) { error.textContent = e.message; }
+        try {
+          editarTarea(id, nuevo);
+          error.textContent = '';
+        } catch (e) {
+          error.textContent = e.message;
+        }
       }
     }
     pintar();
